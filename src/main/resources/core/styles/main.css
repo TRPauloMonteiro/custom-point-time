@@ -1,0 +1,19 @@
+/*subnav*/
+#BFX_SubNav{
+	-fx-background-color: -fx-tr-medium-gray-1;
+}
+
+#sectionTitle{
+	-fx-text-fill: -fx-tr-white;
+	-fx-font-family: Knowledge-Bold;
+	-fx-font-weight: bold;
+}
+
+#subNavLine{
+	-fx-background-color: -fx-tr-orange;
+}
+
+#btnSave{
+	-fx-fill: -fx-tr-orange;
+	-fx-cursor: hand;
+}

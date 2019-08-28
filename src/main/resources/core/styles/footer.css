@@ -1,0 +1,20 @@
+#footer{
+	-fx-background-color:  -fx-tr-black;
+}
+
+.btn-icons:hover{
+	-fx-fill: -fx-tr-orange;
+    -fx-cursor: hand;
+}
+
+.btn-icons.bg-transparent{
+	-fx-background-color: rgba(0, 0, 0, 0);
+}
+
+#footerBug{
+	-fx-fill: -fx-tr-medium-gray-1;
+}
+
+#footerBug:hover{
+	-fx-fill: -fx-tr-white;
+}

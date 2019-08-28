@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton buttonType="RAISED" layoutX="269.0" layoutY="102.0" ripplerFill="BLACK" style="-fx-background-color: #000000;" text="Apontar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="18.0" layoutY="21.0" text="Novo Apontamento" textAlignment="CENTER" />
+      <Label layoutX="21.0" layoutY="269.0" text="Últimos Apontamentos" />
+      <JFXDatePicker defaultColor="#ff8a03" layoutX="209.0" layoutY="59.0" prefHeight="29.0" prefWidth="125.0" promptText="Data">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXDatePicker>
+      <JFXTextField labelFloat="true" layoutX="31.0" layoutY="61.0" prefHeight="26.0" prefWidth="100.0" promptText="Jira Code" />
+      <JFXTextField labelFloat="true" layoutX="146.0" layoutY="61.0" prefHeight="26.0" prefWidth="46.0" promptText="Horas" />
+      <TreeTableView editable="true" layoutX="21.0" layoutY="294.0" prefHeight="126.0" prefWidth="318.0">
+        <columns>
+          <TreeTableColumn prefWidth="57.0" text="Data" />
+            <TreeTableColumn prefWidth="48.0" text="Horas" />
+          <TreeTableColumn prefWidth="78.0" text="Jira Code" />
+        </columns>
+         <columnResizePolicy>
+            <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TreeTableView>
+      <Label layoutX="21.0" layoutY="125.0" text="Status" />
+      <Label layoutX="66.0" layoutY="152.0" text="Folha Certa" />
+      <Label layoutX="66.0" layoutY="192.0" text="Jira" />
+      <Label layoutX="66.0" layoutY="230.0" text="My Time" />
+      <JFXTextField layoutX="142.0" layoutY="146.0" prefHeight="29.0" prefWidth="152.0" />
+      <JFXTextField layoutX="143.0" layoutY="186.0" prefHeight="29.0" prefWidth="152.0" />
+      <JFXTextField layoutX="143.0" layoutY="225.0" prefHeight="29.0" prefWidth="152.0" />
+   </children>
+</AnchorPane>

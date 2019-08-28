@@ -1,0 +1,45 @@
+/*menu*/
+#optionsMenu{
+	-fx-background-color: -fx-tr-medium-gray-1;
+}
+
+.menuItem{
+	-fx-cursor: hand;
+}
+
+.menuItem.selected{
+	-fx-background-color: -fx-tr-white;
+}
+
+/*options pane*/
+.options-pane{
+	-fx-background-color: -fx-tr-white;
+}
+
+.options-title{
+	-fx-text-fill: -fx-tr-orange;
+	-fx-font-family: Knowledge-Light;
+	-fx-font-weight: bold;
+	-fx-font-size: 20;
+}
+
+.jfx-text-field.text-color,
+.jfx-password-field.text-color,
+.toogle-label{
+    -fx-prompt-text-fill: -fx-tr-dark-gray-2;
+    -fx-text-fill: -fx-tr-dark-gray-2;
+    -fx-font-size: 14;
+}
+
+.toogled{
+	-fx-text-fill: -fx-tr-orange;
+}
+
+.toogle-group{
+	-fx-border-color: -fx-tr-orange;
+}
+
+.jfx-radio-button {
+    -jfx-selected-color:  -fx-tr-orange;
+    -jfx-unselected-color: -fx-tr-dark-gray-2;
+}

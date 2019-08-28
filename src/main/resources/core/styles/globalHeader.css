@@ -1,0 +1,33 @@
+#globalHeader{
+    -fx-background-color: -fx-tr-black;
+}
+
+.gh-btns{
+    -fx-fill: -fx-tr-medium-gray-2;
+}
+
+.gh-btns.selected{
+	 -fx-fill: -fx-tr-orange;
+}
+
+.gh-btns:hover{
+    -fx-fill: -fx-tr-white;
+    -fx-cursor: hand;
+}
+
+#brandTitle{
+    -fx-font-size: 12;
+    -fx-text-fill: -fx-tr-orange;
+    -fx-font-weight: bold;
+    -fx-font-family: Knowledge-Bold;
+}
+
+#productTitle{
+    -fx-font-size: 16;
+    -fx-text-fill: -fx-tr-white;
+    -fx-font-family: Knowledge-Light;
+}
+
+#productTitle:hover{
+    -fx-text-fill: -fx-tr-orange;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="globalHeader" prefHeight="60.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="ghTitleWrap" layoutX="18.0" layoutY="13.0">
+         <children>
+            <Label fx:id="brandTitle" prefHeight="17.0" prefWidth="160.0" text="brand">
+               <font>
+                  <Font name="Elephant Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="productTitle" layoutY="13.0" prefHeight="17.0" prefWidth="160.0" text="productTitle">
+               <font>
+                  <Font name="Franklin Gothic Book" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <HBox fx:id="ghRightButtonsWrap" layoutX="1116.0" layoutY="16.0" spacing="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="16.0">
+         <children>
+            <MaterialDesignIconView fx:id="ghHomeBtn" glyphName="HOME" size="30" styleClass="gh-btns" />
+            <MaterialDesignIconView fx:id="ghHistBtn" glyphName="HISTORY" size="30" styleClass="gh-btns" />
+            <MaterialDesignIconView fx:id="ghSettingsBtn" glyphName="SETTINGS" size="30" styleClass="gh-btns" />
+            <MaterialDesignIconView fx:id="ghExitBtn" glyphName="EXIT_TO_APP" size="30" styleClass="gh-btns" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

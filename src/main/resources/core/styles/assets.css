@@ -1,0 +1,34 @@
+/*
+ *typography
+ */
+@font-face {
+    font-family: 'Knowledge-Light';
+    src: url('../fonts/Knowledge2017-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Knowledge-Bold';
+    src: url('../fonts/Knowledge2017-Bold.ttf');
+}
+
+/*
+ *color pallete
+ */
+*{
+    -fx-tr-black:           #000;
+    -fx-tr-dark-gray-1:     #212121;
+    -fx-tr-dark-gray-2:     #37383D;
+    -fx-tr-medium-gray-1:   #606168;
+    -fx-tr-medium-gray-2:   #93939C;
+    -fx-tr-medium-gray-3:   #B2B2B8;
+    -fx-tr-light-gray-1:    #D5D4D9;
+    -fx-tr-light-gray-2:    #F4F5F7;
+    -fx-tr-white:           #FFF;
+    -fx-tr-orange:          #FF8000;
+    -fx-tr-light-orange:    #FFB400;
+    -fx-tr-red:             #DC0A0A;
+    -fx-tr-green:           #387C2B;
+    -fx-tr-blue:            #0072A8;
+    -fx-tr-blue-link:       #005885;
+    -fx-tr-blue-pale:       #D4EBF4;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="footer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="55.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imgs/tr_logo_white_h.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="footerIconsWrap" layoutX="265.0" prefHeight="40.0" prefWidth="56.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <FontAwesomeIconView fx:id="footerGitHub" fill="WHITE" glyphName="GITHUB" layoutX="10.0" layoutY="28.0" selectionStart="0" size="24" styleClass="btn-icons" AnchorPane.rightAnchor="0.0" />
+            <FontAwesomeIconView fx:id="footerBug" fill="WHITE" glyphName="BUG" layoutX="4.0" layoutY="28.0" selectionStart="0" size="24" styleClass="btn-icons" wrappingWidth="20.571428298950195" AnchorPane.leftAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/assets.css" />
+      <URL value="@../styles/footer.css" />
+   </stylesheets>
+</AnchorPane>

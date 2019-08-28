@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="BFX_MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="BFX_GHWrap" prefHeight="60.0" prefWidth="1200.0" style="-fx-background-color: F0F;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="BFX_SideMenu" layoutY="60.0" prefHeight="740.0" prefWidth="200.0" style="-fx-background-color: #0F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="60.0" />
+      <AnchorPane fx:id="BFX_MainViewWarp" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0" />
+      <AnchorPane fx:id="BFX_Footer" prefHeight="40.0" prefWidth="1200.0" style="-fx-background-color: #0FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+   <stylesheets>
+      <URL value="@../styles/assets.css" />
+      <URL value="@../styles/main.css" />
+   </stylesheets>
+</AnchorPane>
