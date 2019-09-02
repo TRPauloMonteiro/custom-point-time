@@ -2,6 +2,7 @@ package tr.customteam.point_time.core.options;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -17,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import tr.customteam.point_time.core.SaveEvent;
 import tr.customteam.point_time.viewmanager.IControllerSave;
 import tr.customteam.point_time.viewmanager.ISubController;
 import tr.customteam.point_time.viewmanager.ViewEvent;
@@ -45,10 +47,12 @@ public class OptionsController implements IControllerSave, Initializable {
     private OptionsProfile optProfile;
     private List<String> selectOptionsPane = new ArrayList<String>();
     private SimpleStringProperty selectedMenu;
+    private HashMap<String, Image> imageCache;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		optProfile = (OptionsProfile) OptionsManager.loadOption(getClass().getResource("/core/config").getPath(), "profile", OptionsProfile.class);	
+		imageCache = new HashMap<String, Image>();
 		
 		setUp();
 	}
@@ -86,7 +90,14 @@ public class OptionsController implements IControllerSave, Initializable {
 						menuIcon = (ImageView) child;
 						
 						item.getStyleClass().add("selected");
-						imageIcon = new Image(getClass().getResource("/core/imgs/" + newText + "_logo_orange.png").toString());
+						
+						if(imageCache.containsKey(newText + "_orange")) {
+							imageIcon = imageCache.get(newText + "_orange");
+						}else {
+							imageIcon = new Image(getClass().getResource("/core/imgs/" + newText + "_logo_orange.png").toString());
+							imageCache.put(newText, imageIcon);
+						}					
+						
 						menuIcon.setImage(imageIcon);
 						//tell main controller to load the view
 						item.fireEvent(new ViewEvent(ViewEvent.LOAD_VIEW, newText + "Options", false));
@@ -103,11 +114,19 @@ public class OptionsController implements IControllerSave, Initializable {
 							menuIcon = (ImageView) child;
 									
 							item.getStyleClass().remove("selected");
-							imageIcon = new Image(getClass().getResource("/core/imgs/" + oldText + "_logo_white.png").toString());
+							
+							if(imageCache.containsKey(oldText + "_white")) {
+								imageIcon = imageCache.get(oldText + "_white");
+							}else {
+								imageIcon = new Image(getClass().getResource("/core/imgs/" + oldText + "_logo_white.png").toString());
+								imageCache.put(newText, imageIcon);
+							}
+							
 							menuIcon.setImage(imageIcon);
 						}
 						
 						onSave();
+						optionsMenu.fireEvent(new SaveEvent(SaveEvent.HIDE_SAVE));
 					}
 				}
 			}			

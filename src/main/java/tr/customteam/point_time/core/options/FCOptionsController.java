@@ -76,6 +76,7 @@ public class FCOptionsController implements ISubController, Initializable {
 	
 	private void setUp() {
 		tgFCReminder.selectedProperty().addListener((obs, oldValue, newValue) -> {
+			System.out.println(newValue);
 			if(newValue) {
 				lblFCReminder.getStyleClass().add("toogled");
 				reminderGroup.getStyleClass().add("toogle-group");
@@ -157,9 +158,10 @@ public class FCOptionsController implements ISubController, Initializable {
 		
 	}
 	
-	private void initFields(){
+	public void initFields(){
 		tfFolhaCertaUsername.setText(optProfile.getFolhaCertaUsername());
 		tfFolhaCertaPass.setText(optProfile.getFolhaCertaPassWord());
+		tgFCReminder.setSelected(true);
 		tgFCReminder.setSelected(optProfile.isFolhaCertaActiveReminder());
 		tgFCSummary.setSelected(optProfile.isFolhaCertaActiveSummary());
 		

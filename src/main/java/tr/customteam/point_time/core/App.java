@@ -22,7 +22,8 @@ public class App extends Application {
 	public static ViewManager viewManager = new ViewManager();	
 	
 	@Override
-	public void init() throws Exception {        
+	public void init() throws Exception {  
+		//load option file
 		OptionsManager.loadOption(getClass().getResource("/core/config").getPath(), "general", OptionsGeneral.class);
 		super.init();
 	}
@@ -108,6 +109,7 @@ public class App extends Application {
     		.init(stage); 
     	
     	try {
+    		//if is the first app run load option view 
 			if(optionGeneral.isFirstRun()) {
 				viewManager.load("options");
 				ViewManager.setCurrentView("options");
@@ -125,11 +127,13 @@ public class App extends Application {
 			System.out.println(e.getCause());
 		}
     	
+    	//if system tray is not supported load gui
     	if(FXSystemTray.isSystemTraySupported()) {
-    		FXSystemTray tray = new FXSystemTray(stage);
+    		FXSystemTray tray = new FXSystemTray(stage, optionGeneral);
     		MainController mainController = (MainController) viewManager.getView("main").getController();
     		mainController.setSystemTray(tray);
     		
+    		//when close the stage window don't finished the app
     		Platform.setImplicitExit(false);    		
     	}else {
     		stage.show();

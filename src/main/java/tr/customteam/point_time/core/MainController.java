@@ -16,6 +16,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import tr.customteam.point_time.core.components.GlobalHeaderEvent;
+import tr.customteam.point_time.core.options.OptionsManager;
+import tr.customteam.point_time.core.options.OptionsProfile;
 import tr.customteam.point_time.viewmanager.IController;
 import tr.customteam.point_time.viewmanager.IControllerSave;
 import tr.customteam.point_time.viewmanager.LoadViewException;
@@ -51,6 +53,8 @@ public class MainController implements IController, Initializable{
 	private ViewManager viewManager;
 	private FXSystemTray systemTray;
 	
+	private Core appCore;
+	
 	public MainController(Stage mainStage, HostServices hostService, ViewManager viewManager) {
 		this.mainStage = mainStage;
 		this.hostService = hostService;
@@ -60,6 +64,9 @@ public class MainController implements IController, Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		setUp();
+		
+		OptionsProfile optProfile = (OptionsProfile) OptionsManager.loadOption(getClass().getResource("/core/config").getPath(), "profile", OptionsProfile.class);	
+		appCore = new Core(optProfile).initModules();
 	}
 	
 	public void setSystemTray(FXSystemTray systemTray) {
@@ -90,6 +97,7 @@ public class MainController implements IController, Initializable{
 			}
 			
 			Platform.exit();
+			System.exit(0);
 		});
 		
 		mainStage.addEventHandler(HyperLinkEvent.OPEN_DOCUMENT, e -> {
@@ -98,10 +106,18 @@ public class MainController implements IController, Initializable{
 		
 		mainStage.addEventHandler(SaveEvent.SAVE, e ->{
 			System.out.println("Save Event");
+			
 			if(!btnSave.isVisible()) {
 				btnSave.setVisible(true);
 				new FadeIn(btnSave).play();
-			}			
+			}
+		});
+		
+		mainStage.addEventHandler(SaveEvent.HIDE_SAVE, e ->{			
+			if(btnSave.isVisible()) {
+				new FadeOut(btnSave).play();
+				btnSave.setVisible(false);
+			}
 		});
 		
 		btnSave.setOnMouseClicked(e -> {

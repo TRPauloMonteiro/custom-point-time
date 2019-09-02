@@ -17,6 +17,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import tr.customteam.point_time.core.options.OptionsGeneral;
 
 public class FXSystemTray extends Pane{
 	private SystemTray tray;
@@ -25,8 +26,8 @@ public class FXSystemTray extends Pane{
 	
 	private Stage mainStage;
 	
-	public FXSystemTray(Stage mainStage){
-		appTittle = "Custom Point Time";
+	public FXSystemTray(Stage mainStage, OptionsGeneral optionGeneral){
+		appTittle = optionGeneral.getName();
 		this.mainStage = mainStage;
 		
 		try {
@@ -49,7 +50,9 @@ public class FXSystemTray extends Pane{
 			
 			sendMessage("App Running", appTittle + " está sendo executado em background!", MessageType.INFO);
 			
-			//todo
+			/*
+			 * make the gui show always on the right bottom just little above system taskbar
+			 * */
 			Rectangle2D screenBounds = Screen.getPrimary().getBounds();			    		
 			this.mainStage.setOnShown(e -> {
     			System.out.println(this.mainStage.getWidth());
@@ -60,13 +63,10 @@ public class FXSystemTray extends Pane{
     			this.mainStage.setAlwaysOnTop(true);
     		});
 		} catch (AWTException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -103,7 +103,7 @@ public class FXSystemTray extends Pane{
         exitItem.addActionListener(event -> {
         	removeTrayIcon();
         	Platform.exit();
-            
+            System.exit(0);
         });
 
         // setup the popup menu for the application.

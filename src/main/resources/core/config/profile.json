@@ -1,10 +1,10 @@
 {
 	"folhaCertaUsername": "paulo.f.monteiro@thomsonreuters.com",
 	"folhaCertaPassWord": "3226",
-	"folhaCertaActiveReminder": true,
-	"folhaCertaStartTime": "",
-	"folhaCertaLunchtTime": "",
-	"folhaCertaLeaveTime": "",
+	"folhaCertaActiveReminder": false,
+	"folhaCertaStartTime": "23:00",
+	"folhaCertaLunchtTime": "12:00",
+	"folhaCertaLeaveTime": "18:00",
 	"folhaCertaMinutesToReminder": "10",
 	"jiraUsername": "",
 	"jiraPassWord": "",
@@ -14,5 +14,5 @@
 	"summaryEmail": "",
 	"summaryEmailPass": "",
 	"jiraModule": true,
-	"folhaCertaModule" :false
+	"folhaCertaModule" :true
 }

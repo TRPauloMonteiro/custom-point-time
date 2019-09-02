@@ -149,6 +149,7 @@ public class JiraOptionsController implements ISubController, Initializable {
 		
 		tfJiraUsername.setText(optProfile.getJiraUsername());
 		tfJiraPass.setText(optProfile.getJiraPassWord());
+		tgJiraReminder.setSelected(true);
 		tgJiraReminder.setSelected(optProfile.isJiraActiveReminder());
 		tgJiraSummary.setSelected(optProfile.isJiraActiveSummary());
 	}
